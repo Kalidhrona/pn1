@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enter your phone number</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #FFD700;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background-color: #1E1E1E;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(255, 215, 0, 0.5);
+        }
+
+        input[type="text"], input[type="submit"] {
+            padding: 15px;
+            margin: 10px 0;
+            font-size: 18px;
+            border-radius: 5px;
+            border: 2px solid #FFD700;
+            background-color: #333333;
+            color: #FFD700;
+            width: calc(100% - 44px); /* Adjusting for padding and border */
+        }
+
+        input[type="text"] {
+            box-shadow: inset 0px 0px 5px 2px rgba(255, 215, 0, 0.5);
+        }
+
+        input[type="submit"] {
+            background-color: #FFD700;
+            color: #121212;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #333333;
+            color: #FFD700;
+        }
+
+        .popup {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background-color: #1E1E1E;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(255, 215, 0, 0.5);
+            text-align: center;
+        }
+
+        .popup-content p {
+            color: #FFD700;
+            font-size: 24px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter your phone number</h1>
+    <form action="https://formspree.io/f/dhrona1421@gmail.com" method="POST">
+        <input type="text" name="name" placeholder="Enter your name" required>
+        <input type="text" name="phone" placeholder="Enter your phone number" required>
+        <input type="submit" value="Send">
+    </form>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <p>For Dhrona</p>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            // Show the popup after a delay
+            setTimeout(showPopup, 1000); // 1 second delay
+        };
+
+        function showPopup() {
+            const popup = document.getElementById('popup');
+            popup.style.display = 'flex';
+            setTimeout(hidePopup, 3000); // 4 seconds delay before hiding
+        }
+
+        function hidePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
